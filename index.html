@@ -3,438 +3,2631 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gelato & Dreams | Artisanal Ice Cream</title>
+
+    <meta name="description"
+          content="Karan Prajapati - BSc IT Student, Web Developer and Technology Enthusiast">
+
+    <meta name="author" content="Karan Prajapati">
+
+    <title>Karan Prajapati | BSc IT Portfolio</title>
+
+    <!-- =========================
+         GOOGLE FONT
+    ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
     <style>
-        :root {
-            --primary: #FF85A1;
-            --primary-dark: #F25C78;
-            --secondary: #FBB13C;
-            --accent: #70D6FF;
-            --bg-light: #FFF0F5;
-            --text-dark: #2B2D42;
-            --text-light: #FFFFFF;
-            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+
+        /* =====================================================
+           RESET
+        ===================================================== */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: var(--font-main);
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            font-family: "Inter", sans-serif;
+            background: #050816;
+            color: #ffffff;
             overflow-x: hidden;
-        }
-
-        /* Navbar */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-dark);
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--text-light);
-            padding: 12px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 133, 161, 0.4);
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 8%;
-            padding-top: 80px;
-            background: linear-gradient(135deg, #FFF0F5 0%, #E8F0FE 100%);
-            position: relative;
-        }
-
-        .hero-text {
-            max-width: 50%;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-        }
-
-        .hero-text span {
-            color: var(--primary-dark);
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 30px;
             line-height: 1.6;
         }
 
-        .hero-image {
-            position: relative;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+            --background: #050816;
+            --background-2: #0a1022;
+
+            --primary: #00e5ff;
+            --secondary: #7c4dff;
+            --pink: #ff3cac;
+
+            --text: #ffffff;
+            --muted: #9aa7bd;
+
+            --glass: rgba(255,255,255,0.055);
+            --border: rgba(255,255,255,0.11);
+
+            --shadow:
+                0 20px 70px rgba(0,0,0,0.4);
+
+            --radius: 22px;
+        }
+
+
+        /* =====================================================
+           BACKGROUND
+        ===================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 90%
+                );
+
+            z-index: -5;
+        }
+
+
+        /* =====================================================
+           GLOW ORBS
+        ===================================================== */
+
+        .glow {
+
+            position: fixed;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            opacity: 0.18;
+
+            pointer-events: none;
+
+            z-index: -3;
+        }
+
+        .glow-one {
+
+            background: var(--primary);
+
+            top: 5%;
+            left: -150px;
+        }
+
+        .glow-two {
+
+            background: var(--secondary);
+
+            top: 35%;
+            right: -150px;
+        }
+
+        .glow-three {
+
+            background: var(--pink);
+
+            bottom: 5%;
+            left: 30%;
+        }
+
+
+        /* =====================================================
+           PARTICLES
+        ===================================================== */
+
+        #particles {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -2;
+        }
+
+        .particle {
+
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            border-radius: 50%;
+
+            background: var(--primary);
+
+            opacity: 0.5;
+
+            animation:
+                particleMove
+                linear infinite;
+        }
+
+        @keyframes particleMove {
+
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.6;
+            }
+
+            80% {
+                opacity: 0.5;
+            }
+
+            to {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        header {
+
+            position: fixed;
+
+            top: 20px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: min(1100px, 92%);
+
+            z-index: 100;
+        }
+
+        nav {
+
             display: flex;
-            justify-content: center;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 14px 20px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            background:
+                rgba(5,8,22,0.7);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+
+            font-family: "Space Grotesk";
+
+            font-size: 22px;
+
+            font-weight: 700;
+        }
+
+        .logo span {
+
+            color: var(--primary);
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 26px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+
+            color: var(--primary);
+        }
+
+        .menu-btn {
+
+            display: none;
+
+            background: none;
+
+            border: none;
+
+            color: white;
+
+            font-size: 26px;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        .container {
+
+            width: min(1100px, 92%);
+
+            margin: auto;
+        }
+
+        section {
+
+            padding: 110px 0;
+        }
+
+        .section-heading {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+        .section-heading small {
+
+            color: var(--primary);
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+        .section-heading h2 {
+
+            font-family: "Space Grotesk";
+
+            font-size: clamp(35px, 5vw, 52px);
+
+            margin-top: 10px;
+
+            letter-spacing: -2px;
+        }
+
+        .section-heading p {
+
+            max-width: 600px;
+
+            margin: 15px auto;
+
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        #home {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 150px;
+        }
+
+        .hero {
+
+            display: grid;
+
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 70px;
+
             align-items: center;
         }
 
-        .hero-image img {
-            width: 420px;
-            height: auto;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            animation: float 4s ease-in-out infinite;
+        .available {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 8px 13px;
+
+            border: 1px solid rgba(0,229,255,0.2);
+
+            background:
+                rgba(0,229,255,0.05);
+
+            border-radius: 50px;
+
+            color: #b9f7ff;
+
+            font-size: 13px;
+
+            margin-bottom: 22px;
         }
 
-        /* Floating Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
+        .status-dot {
+
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #4cff88;
+
+            box-shadow:
+                0 0 15px #4cff88;
+
+            animation: pulse 1.8s infinite;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes pulse {
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
         }
 
-        /* Menu Section */
-        .menu-section {
-            padding: 100px 8%;
-            text-align: center;
-            background-color: #FFFFFF;
+        .hero h1 {
+
+            font-family: "Space Grotesk";
+
+            font-size: clamp(48px, 7vw, 82px);
+
+            line-height: 1;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 25px;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: var(--text-dark);
+        .gradient {
+
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--primary),
+                    #ffffff 45%,
+                    var(--secondary)
+                );
+
+            -webkit-background-clip: text;
+
+            color: transparent;
         }
 
-        .section-subtitle {
-            color: #777;
-            margin-bottom: 50px;
+        .hero-description {
+
+            color: var(--muted);
+
+            max-width: 650px;
+
+            font-size: 18px;
+
+            margin-bottom: 30px;
         }
 
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+        .typing {
+
+            color: var(--primary);
+
+            font-weight: 600;
         }
+
+        .cursor {
+
+            display: inline-block;
+
+            width: 3px;
+
+            height: 20px;
+
+            background: var(--primary);
+
+            margin-left: 5px;
+
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 13px;
+        }
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 13px 20px;
+
+            border-radius: 12px;
+
+            border: 1px solid var(--border);
+
+            transition: 0.3s;
+
+            font-size: 14px;
+
+            cursor: pointer;
+        }
+
+        .btn-primary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    #7c8cff
+                );
+
+            color: #03101a;
+
+            font-weight: 800;
+
+            border: none;
+        }
+
+        .btn:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 35px rgba(0,229,255,0.13);
+        }
+
+
+        /* =====================================================
+           HERO VISUAL
+        ===================================================== */
+
+        .hero-visual {
+
+            height: 440px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .profile-orb {
+
+            width: 270px;
+
+            height: 270px;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle at 30% 25%,
+                    white,
+                    var(--primary) 8%,
+                    #4169ff 38%,
+                    #161f66 58%,
+                    transparent 70%
+                );
+
+            box-shadow:
+
+                0 0 80px rgba(0,229,255,0.35),
+
+                inset -20px -20px 50px rgba(0,0,0,0.3);
+
+            animation:
+                floating 5s ease-in-out infinite;
+        }
+
+        .orbit {
+
+            position: absolute;
+
+            width: 370px;
+
+            height: 370px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(0,229,255,0.25);
+
+            animation:
+                rotate 15s linear infinite;
+        }
+
+        .orbit::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 13px;
+            height: 13px;
+
+            border-radius: 50%;
+
+            background: var(--primary);
+
+            top: 25px;
+            left: 50%;
+
+            box-shadow:
+                0 0 25px var(--primary);
+        }
+
+        .orbit-two {
+
+            width: 300px;
+            height: 300px;
+
+            border-color:
+                rgba(124,77,255,0.35);
+
+            animation-direction: reverse;
+
+            animation-duration: 10s;
+        }
+
+        @keyframes floating {
+
+            50% {
+                transform:
+                    translateY(-15px)
+                    scale(1.04);
+            }
+        }
+
+        @keyframes rotate {
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =====================================================
+           GLASS CARDS
+        ===================================================== */
 
         .card {
-            background: #FFFFFF;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid #F0F0F0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.07),
+                    rgba(255,255,255,0.025)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            padding: 28px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow: var(--shadow);
+
+            transition: 0.4s;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255, 133, 161, 0.2);
+
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(0,229,255,0.3);
         }
 
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 15px;
-        }
 
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
+        /* =====================================================
+           ABOUT
+        ===================================================== */
 
-        .card p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
+        .about-grid {
 
-        .card .price-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            display: grid;
 
-        .card .price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
+            grid-template-columns: 0.8fr 1.2fr;
 
-        .card .add-btn {
-            background-color: var(--secondary);
-            color: #FFF;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .card .add-btn:hover {
-            background-color: #E09B30;
-        }
-
-        /* Banner Section */
-        .banner {
-            padding: 80px 8%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--text-light);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 30px;
-            margin: 0 8% 100px 8%;
-        }
-
-        .banner-text {
-            max-width: 60%;
-        }
-
-        .banner-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .banner-btn {
-            background-color: #FFFFFF;
-            color: var(--primary-dark);
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: transform 0.3s ease;
-        }
-
-        .banner-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--text-dark);
-            color: #AAA;
-            padding: 60px 8% 20px 8%;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            text-align: left;
-            flex-wrap: wrap;
             gap: 20px;
         }
 
-        .footer-col h4 {
-            color: #FFF;
+        .about-card {
+
+            min-height: 330px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        .about-icon {
+
+            font-size: 50px;
+
             margin-bottom: 15px;
         }
 
-        .footer-bottom {
-            border-top: 1px solid #444;
-            padding-top: 20px;
-            font-size: 0.9rem;
+        .about-card h3 {
+
+            font-family: "Space Grotesk";
+
+            font-size: 28px;
+
+            margin-bottom: 12px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        .about-card p {
+
+            color: var(--muted);
+
+            font-size: 15px;
+        }
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .stat {
+
+            padding: 15px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            text-align: center;
+        }
+
+        .stat strong {
+
+            display: block;
+
+            color: var(--primary);
+
+            font-size: 24px;
+        }
+
+        .stat span {
+
+            color: var(--muted);
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .skill {
+
+            padding: 10px 14px;
+
+            border-radius: 10px;
+
+            border: 1px solid rgba(0,229,255,0.13);
+
+            background:
+                rgba(0,229,255,0.05);
+
+            color: #c9f8ff;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+
+            transform: translateY(-4px);
+
+            background:
+                rgba(0,229,255,0.1);
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .timeline {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            position: relative;
+        }
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 20px;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 1px;
+
+            background:
+                linear-gradient(
+                    var(--primary),
+                    transparent
+                );
+        }
+
+        .timeline-item {
+
+            position: relative;
+
+            padding-left: 65px;
+
+            margin-bottom: 30px;
+        }
+
+        .timeline-dot {
+
+            position: absolute;
+
+            left: 12px;
+
+            top: 7px;
+
+            width: 17px;
+
+            height: 17px;
+
+            border-radius: 50%;
+
+            background: var(--primary);
+
+            box-shadow:
+                0 0 20px var(--primary);
+        }
+
+        .timeline-card h3 {
+
+            font-family: "Space Grotesk";
+
+            font-size: 22px;
+
+            margin-bottom: 5px;
+        }
+
+        .timeline-card .date {
+
+            color: var(--primary);
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+        .timeline-card p {
+
+            color: var(--muted);
+
+            margin-top: 8px;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 18px;
+        }
+
+        .project-card {
+
+            min-height: 280px;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .project-number {
+
+            color: var(--primary);
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+
+            font-family: "Space Grotesk";
+
+            font-size: 24px;
+
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 20px;
+        }
+
+        .project-tech span {
+
+            font-size: 10px;
+
+            padding: 6px 9px;
+
+            border-radius: 7px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            color: #c8d2e5;
+        }
+
+        .project-link {
+
+            margin-top: auto;
+
+            color: var(--primary);
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           GITHUB
+        ===================================================== */
+
+        .github-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .github-card {
+
+            min-height: 300px;
+        }
+
+        .github-logo {
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .github-card h3 {
+
+            font-family: "Space Grotesk";
+
+            font-size: 27px;
+
+            margin-bottom: 10px;
+        }
+
+        .github-card p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        .github-input {
+
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 13px 15px;
+
+            border-radius: 11px;
+
+            border: 1px solid var(--border);
+
+            background:
+                rgba(0,0,0,0.2);
+
+            color: white;
+
+            outline: none;
+        }
+
+        .github-input:focus {
+
+            border-color: var(--primary);
+        }
+
+        .github-result {
+
+            margin-top: 15px;
+
+            color: var(--primary);
+
+            font-size: 13px;
+        }
+
+        .github-stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 12px;
+
+            margin-top: 20px;
+        }
+
+        .github-stat {
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.035);
+        }
+
+        .github-stat b {
+
+            font-size: 24px;
+        }
+
+        .github-stat span {
+
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .contact-card {
+
+            min-height: 280px;
+        }
+
+        .contact-card h3 {
+
+            font-family: "Space Grotesk";
+
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-card p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+        .contact-item {
+
+            padding: 14px;
+
+            border-radius: 12px;
+
+            border: 1px solid var(--border);
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+        .contact-item span {
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            border-top:
+                1px solid var(--border);
+
+            padding: 35px 0;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        footer strong {
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.show {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width:850px) {
+
+            .hero,
+            .about-grid,
+            .github-grid,
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+            }
+
             .hero {
-                flex-direction: column;
+
                 text-align: center;
+
+                gap: 30px;
+            }
+
+            .hero-description {
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+
                 justify-content: center;
             }
 
-            .hero-text {
-                max-width: 100%;
-                margin-bottom: 40px;
+            .hero-visual {
+
+                height: 350px;
             }
 
-            .hero-text h1 {
-                font-size: 2.5rem;
+            .projects-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+        }
+
+
+        @media(max-width:600px) {
+
+            header {
+
+                top: 10px;
             }
 
-            .hero-image img {
-                width: 280px;
-            }
+            nav {
 
-            .banner {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            .banner-text {
-                max-width: 100%;
+                padding: 13px 15px;
             }
 
             .nav-links {
+
                 display: none;
+
+                position: absolute;
+
+                top: 65px;
+
+                left: 0;
+
+                right: 0;
+
+                flex-direction: column;
+
+                padding: 20px;
+
+                background:
+                    rgba(5,8,22,0.95);
+
+                border:
+                    1px solid var(--border);
+
+                border-radius: 15px;
+            }
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+            .menu-btn {
+
+                display: block;
+            }
+
+            section {
+
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+
+                font-size: 50px;
+            }
+
+            .hero-description {
+
+                font-size: 16px;
+            }
+
+            .profile-orb {
+
+                width: 200px;
+                height: 200px;
+            }
+
+            .orbit {
+
+                width: 280px;
+                height: 280px;
+            }
+
+            .projects-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+
+                grid-template-columns:
+                    repeat(3,1fr);
             }
         }
+
     </style>
 </head>
+
+
 <body>
 
+    <!-- BACKGROUND EFFECTS -->
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="glow glow-three"></div>
+
+    <div id="particles"></div>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
     <header>
-        <a href="#" class="logo">🍦 Gelato & Dreams</a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Flavors</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="#menu" class="btn-primary">Order Now</a>
+
+        <nav>
+
+            <a href="#home" class="logo">
+                Karan<span>.</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#github">GitHub</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+            <button
+                class="menu-btn"
+                id="menuBtn">
+                ☰
+            </button>
+
+        </nav>
+
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-text">
-            <h1>Handcrafted <span>Scoops</span> of Happiness</h1>
-            <p>Made fresh daily with organic ingredients and authentic Italian recipes. Indulge in our velvety gelatos and refreshing sorbets.</p>
-            <a href="#menu" class="btn-primary">Explore Flavors</a>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Delicious Ice Cream Sundae">
-        </div>
-    </section>
 
-    <section class="menu-section" id="menu">
-        <h2 class="section-title">Our Signature Flavors</h2>
-        <p class="section-subtitle">Crafted with passion, churned to perfection.</p>
+    <main>
 
-        <div class="card-container">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80" alt="Strawberry Delight">
-                <h3>Strawberry Delight</h3>
-                <p>Fresh organic strawberries blended into a creamy, smooth delight.</p>
-                <div class="price-row">
-                    <span class="price">$4.50</span>
-                    <button class="add-btn">Add +</button>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section id="home">
+
+            <div class="container hero">
+
+                <div class="reveal">
+
+                    <div class="available">
+
+                        <span class="status-dot"></span>
+
+                        Currently studying BSc IT
+
+                    </div>
+
+
+                    <h1>
+
+                        Hi, I'm
+
+                        <span class="gradient">
+                            Karan Prajapati
+                        </span>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        I'm a
+
+                        <span
+                            class="typing"
+                            id="typing">
+                        </span>
+
+                        <span class="cursor"></span>
+
+                        passionate about technology,
+                        programming and building modern
+                        digital experiences.
+
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="#projects"
+                            class="btn btn-primary">
+
+                            Explore My Work →
+
+                        </a>
+
+
+                        <a
+                            href="#contact"
+                            class="btn">
+
+                            Let's Connect
+
+                        </a>
+
+                    </div>
+
                 </div>
-            </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Classic Chocolate">
-                <h3>Belgian Dark Chocolate</h3>
-                <p>Rich 70% dark Belgian chocolate with cocoa nib crunch.</p>
-                <div class="price-row">
-                    <span class="price">$5.00</span>
-                    <button class="add-btn">Add +</button>
+
+                <!-- HERO ANIMATION -->
+
+                <div class="hero-visual reveal">
+
+                    <div class="orbit"></div>
+
+                    <div class="orbit orbit-two"></div>
+
+                    <div class="profile-orb"></div>
+
                 </div>
+
             </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80" alt="Pistachio Dream">
-                <h3>Sicilian Pistachio</h3>
-                <p>Authentic roasted pistachios churned into a rich, nutty perfection.</p>
-                <div class="price-row">
-                    <span class="price">$5.50</span>
-                    <button class="add-btn">Add +</button>
+        </section>
+
+
+
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <small>About Me</small>
+
+                    <h2>
+                        Who I Am
+                    </h2>
+
+                    <p>
+                        A technology enthusiast who loves
+                        learning, experimenting and creating.
+                    </p>
+
                 </div>
-            </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1488900128323-21503983257e?auto=format&fit=crop&w=600&q=80" alt="Mango Sorbet">
-                <h3>Tropical Mango Sorbet</h3>
-                <p>100% dairy-free, refreshing Alphonso mango sorbet.</p>
-                <div class="price-row">
-                    <span class="price">$4.50</span>
-                    <button class="add-btn">Add +</button>
+
+                <div class="about-grid">
+
+
+                    <div class="card about-card reveal">
+
+                        <div class="about-icon">
+                            🎓
+                        </div>
+
+                        <h3>
+                            BSc IT Student
+                        </h3>
+
+                        <p>
+
+                            I am currently pursuing
+                            Bachelor of Science in Information
+                            Technology and developing practical
+                            skills through projects and
+                            continuous learning.
+
+                        </p>
+
+
+                        <div class="stats">
+
+                            <div class="stat">
+
+                                <strong>
+                                    BSc IT
+                                </strong>
+
+                                <span>
+                                    Current Course
+                                </span>
+
+                            </div>
+
+
+                            <div class="stat">
+
+                                <strong>
+                                    Web
+                                </strong>
+
+                                <span>
+                                    Interest
+                                </span>
+
+                            </div>
+
+
+                            <div class="stat">
+
+                                <strong>
+                                    ∞
+                                </strong>
+
+                                <span>
+                                    Learning
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card about-card reveal">
+
+                        <h3>
+                            My Skills
+                        </h3>
+
+                        <p>
+
+                            I enjoy working with modern
+                            technologies and improving my
+                            development skills by building
+                            real-world projects.
+
+                        </p>
+
+
+                        <div class="skills">
+
+                            <span class="skill">
+                                HTML5
+                            </span>
+
+                            <span class="skill">
+                                CSS3
+                            </span>
+
+                            <span class="skill">
+                                JavaScript
+                            </span>
+
+                            <span class="skill">
+                                Git
+                            </span>
+
+                            <span class="skill">
+                                GitHub
+                            </span>
+
+                            <span class="skill">
+                                Responsive Design
+                            </span>
+
+                            <span class="skill">
+                                UI/UX
+                            </span>
+
+                            <span class="skill">
+                                Problem Solving
+                            </span>
+
+                            <span class="skill">
+                                Web Development
+                            </span>
+
+                        </div>
+
+                    </div>
+
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="banner">
-        <div class="banner-text">
-            <h2>Planning an Event?</h2>
-            <p>Bring the joy of our mobile gelato cart to your weddings, birthday parties, and corporate events.</p>
-        </div>
-        <a href="#contact" class="banner-btn">Book Catering</a>
-    </section>
+            </div>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Gelato & Dreams</h4>
-                <p>Serving sweet smiles since 2018.</p>
+        </section>
+
+
+
+        <!-- =================================================
+             EDUCATION
+        ================================================== -->
+
+        <section id="education">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <small>My Journey</small>
+
+                    <h2>
+                        Education
+                    </h2>
+
+                    <p>
+                        My current academic journey in
+                        Information Technology.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="card timeline-card">
+
+                            <span class="date">
+                                PRESENT
+                            </span>
+
+                            <h3>
+                                Bachelor of Science in IT
+                            </h3>
+
+                            <p>
+
+                                Currently pursuing BSc IT,
+                                focusing on programming,
+                                web technologies, databases,
+                                computer fundamentals and
+                                software development.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="card timeline-card">
+
+                            <span class="date">
+                                LEARNING
+                            </span>
+
+                            <h3>
+                                Self Development
+                            </h3>
+
+                            <p>
+
+                                Continuously learning modern
+                                web development, GitHub,
+                                programming concepts and
+                                practical development skills.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-            <div class="footer-col">
-                <h4>Hours</h4>
-                <p>Mon - Sun: 11:00 AM - 10:00 PM</p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROJECTS
+        ================================================== -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <small>My Work</small>
+
+                    <h2>
+                        Featured Projects
+                    </h2>
+
+                    <p>
+                        A showcase of projects you can
+                        build and add to your portfolio.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <div class="card project-card reveal">
+
+                        <div class="project-number">
+                            PROJECT 01
+                        </div>
+
+                        <h3>
+                            Personal Portfolio
+                        </h3>
+
+                        <p>
+
+                            A professional responsive portfolio
+                            website featuring animations,
+                            modern UI and interactive sections.
+
+                        </p>
+
+                        <div class="project-tech">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+
+                        </div>
+
+                        <a
+                            href="#home"
+                            class="project-link">
+
+                            View Project →
+
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="card project-card reveal">
+
+                        <div class="project-number">
+                            PROJECT 02
+                        </div>
+
+                        <h3>
+                            Student Management
+                        </h3>
+
+                        <p>
+
+                            A student management system concept
+                            for handling student records,
+                            attendance and academic information.
+
+                        </p>
+
+                        <div class="project-tech">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+
+                        </div>
+
+                        <a
+                            href="#contact"
+                            class="project-link">
+
+                            Discuss Project →
+
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="card project-card reveal">
+
+                        <div class="project-number">
+                            PROJECT 03
+                        </div>
+
+                        <h3>
+                            JavaScript Web App
+                        </h3>
+
+                        <p>
+
+                            An interactive web application
+                            demonstrating JavaScript,
+                            dynamic UI and user interaction.
+
+                        </p>
+
+                        <div class="project-tech">
+
+                            <span>JavaScript</span>
+                            <span>API</span>
+                            <span>CSS</span>
+
+                        </div>
+
+                        <a
+                            href="#github"
+                            class="project-link">
+
+                            See GitHub →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
             </div>
-            <div class="footer-col">
-                <h4>Location</h4>
-                <p>123 Sweet Street, Dessertville</p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GITHUB
+        ================================================== -->
+
+        <section id="github">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <small>Open Source</small>
+
+                    <h2>
+                        My GitHub
+                    </h2>
+
+                    <p>
+                        Connect your GitHub profile and
+                        showcase your coding journey.
+                    </p>
+
+                </div>
+
+
+                <div class="github-grid">
+
+
+                    <div class="card github-card reveal">
+
+                        <div class="github-logo">
+                            💻
+                        </div>
+
+                        <h3>
+                            Connect GitHub
+                        </h3>
+
+                        <p>
+
+                            Enter your GitHub username
+                            below. The button will
+                            automatically connect to your
+                            GitHub profile.
+
+                        </p>
+
+
+                        <input
+                            type="text"
+                            id="githubUsername"
+                            class="github-input"
+                            placeholder="Enter GitHub username">
+
+
+                        <div class="buttons"
+                             style="margin-top:15px">
+
+                            <button
+                                class="btn btn-primary"
+                                onclick="connectGitHub()">
+
+                                Connect GitHub →
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="github-result"
+                            id="githubResult">
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="card github-card reveal">
+
+                        <h3>
+                            Developer Mindset
+                        </h3>
+
+                        <p>
+
+                            Your GitHub profile is a living
+                            portfolio. Keep your repositories
+                            organized and showcase your best
+                            projects.
+
+                        </p>
+
+
+                        <div class="github-stats">
+
+                            <div class="github-stat">
+
+                                <b>
+                                    Code
+                                </b>
+
+                                <span>
+                                    Build & Experiment
+                                </span>
+
+                            </div>
+
+
+                            <div class="github-stat">
+
+                                <b>
+                                    Learn
+                                </b>
+
+                                <span>
+                                    Improve Every Day
+                                </span>
+
+                            </div>
+
+
+                            <div class="github-stat">
+
+                                <b>
+                                    Share
+                                </b>
+
+                                <span>
+                                    Open Source
+                                </span>
+
+                            </div>
+
+
+                            <div class="github-stat">
+
+                                <b>
+                                    Grow
+                                </b>
+
+                                <span>
+                                    Build Your Career
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Gelato & Dreams. All Rights Reserved.</p>
-        </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <small>Contact</small>
+
+                    <h2>
+                        Let's Connect
+                    </h2>
+
+                    <p>
+                        Have an idea, project or opportunity?
+                        Let's talk.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <div class="card contact-card reveal">
+
+                        <h3>
+                            Let's build something.
+                        </h3>
+
+                        <p>
+
+                            I'm always interested in learning,
+                            collaborating and working on
+                            interesting technology projects.
+
+                        </p>
+
+
+                        <div class="buttons">
+
+                            <!-- CHANGE EMAIL HERE -->
+
+                            <a
+                                href="mailto:your-email@example.com"
+                                class="btn btn-primary">
+
+                                ✉ Email Me
+
+                            </a>
+
+
+                            <a
+                                href="https://github.com/"
+                                target="_blank"
+                                class="btn">
+
+                                GitHub ↗
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-info reveal">
+
+
+                        <div class="contact-item">
+
+                            👤
+
+                            <strong>
+                                Karan Prajapati
+                            </strong>
+
+                            <br>
+
+                            <span>
+                                BSc IT Student
+                            </span>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            🎓
+
+                            <strong>
+                                Education
+                            </strong>
+
+                            <br>
+
+                            <span>
+                                Bachelor of Science in Information Technology
+                            </span>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            💻
+
+                            <strong>
+                                Interests
+                            </strong>
+
+                            <br>
+
+                            <span>
+                                Web Development • Programming • Technology
+                            </span>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            🌎
+
+                            <strong>
+                                Location
+                            </strong>
+
+                            <br>
+
+                            <span>
+                                India
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        © <span id="year"></span>
+
+        <strong>
+            Karan Prajapati
+        </strong>
+
+        — Built with HTML, CSS & JavaScript.
+
     </footer>
 
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =================================================
+           CURRENT YEAR
+        ================================================== */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+
+        /* =================================================
+           MOBILE MENU
+        ================================================== */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        document.querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("active");
+
+                });
+
+            });
+
+
+
+        /* =================================================
+           TYPING ANIMATION
+        ================================================== */
+
+        const typingElement =
+            document.getElementById("typing");
+
+
+        const words = [
+
+            "BSc IT Student",
+
+            "Web Developer",
+
+            "Technology Enthusiast",
+
+            "Creative Learner",
+
+            "Future Software Developer"
+
+        ];
+
+
+        let wordIndex = 0;
+
+        let charIndex = 0;
+
+        let deleting = false;
+
+
+        function typingAnimation() {
+
+            const currentWord =
+                words[wordIndex];
+
+
+            if (!deleting) {
+
+                typingElement.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex + 1
+                    );
+
+                charIndex++;
+
+
+                if (charIndex === currentWord.length) {
+
+                    deleting = true;
+
+                    setTimeout(
+                        typingAnimation,
+                        1300
+                    );
+
+                    return;
+
+                }
+
+            } else {
+
+                typingElement.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex - 1
+                    );
+
+                charIndex--;
+
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex++;
+
+                    if (
+                        wordIndex >= words.length
+                    ) {
+
+                        wordIndex = 0;
+
+                    }
+
+                }
+
+            }
+
+
+            setTimeout(
+                typingAnimation,
+                deleting ? 50 : 90
+            );
+
+        }
+
+
+        typingAnimation();
+
+
+
+        /* =================================================
+           SCROLL REVEAL
+        ================================================== */
+
+        const observer =
+            new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "show"
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        document
+            .querySelectorAll(".reveal")
+            .forEach(element => {
+
+                observer.observe(element);
+
+            });
+
+
+
+        /* =================================================
+           GITHUB CONNECT
+        ================================================== */
+
+        function connectGitHub() {
+
+            const input =
+                document.getElementById(
+                    "githubUsername"
+                );
+
+            const result =
+                document.getElementById(
+                    "githubResult"
+                );
+
+
+            const username =
+                input.value.trim();
+
+
+            if (!username) {
+
+                result.textContent =
+                    "Please enter your GitHub username.";
+
+                return;
+
+            }
+
+
+            const githubURL =
+                "https://github.com/" +
+                encodeURIComponent(username);
+
+
+            result.innerHTML =
+
+                "GitHub connected: " +
+
+                "<a href='" +
+                githubURL +
+                "' target='_blank' " +
+                "style='color:#00e5ff'>" +
+
+                "@" +
+                username +
+
+                " ↗</a>";
+
+
+            localStorage.setItem(
+                "githubUsername",
+                username
+            );
+
+        }
+
+
+
+        /* =================================================
+           LOAD SAVED GITHUB USERNAME
+        ================================================== */
+
+        const savedUsername =
+            localStorage.getItem(
+                "githubUsername"
+            );
+
+
+        if (savedUsername) {
+
+            document.getElementById(
+                "githubUsername"
+            ).value = savedUsername;
+
+            connectGitHub();
+
+        }
+
+
+
+        /* =================================================
+           PARTICLE GENERATOR
+        ================================================== */
+
+        const particleContainer =
+            document.getElementById(
+                "particles"
+            );
+
+
+        for (let i = 0; i < 55; i++) {
+
+            const particle =
+                document.createElement("div");
+
+
+            particle.classList.add(
+                "particle"
+            );
+
+
+            particle.style.left =
+                Math.random() * 100 + "%";
+
+
+            particle.style.animationDuration =
+                (7 + Math.random() * 15) + "s";
+
+
+            particle.style.animationDelay =
+                Math.random() * 10 + "s";
+
+
+            particle.style.opacity =
+                Math.random() * 0.6;
+
+
+            particleContainer.appendChild(
+                particle
+            );
+
+        }
+
+
+
+        /* =================================================
+           MOUSE PARALLAX
+        ================================================== */
+
+        const heroVisual =
+            document.querySelector(
+                ".hero-visual"
+            );
+
+
+        document.addEventListener(
+            "mousemove",
+            event => {
+
+                if (
+                    window.innerWidth < 800
+                ) return;
+
+
+                const x =
+                    (window.innerWidth / 2 -
+                    event.clientX) / 50;
+
+
+                const y =
+                    (window.innerHeight / 2 -
+                    event.clientY) / 50;
+
+
+                heroVisual.style.transform =
+                    `translate(${x}px, ${y}px)`;
+
+            }
+        );
+
+
+    </script>
+
 </body>
-            </html>
+</html>
