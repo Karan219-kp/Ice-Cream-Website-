@@ -8,6 +8,9 @@
           content="Karan Prajapati - BSc IT Student, Web Developer and Technology Enthusiast">
 
     <meta name="author" content="Karan Prajapati">
+    <meta name="theme-color" content="#050816">
+    <meta property="og:title" content="Karan Prajapati | BSc IT Portfolio">
+    <meta property="og:description" content="BSc IT student, web developer and technology enthusiast.">
 
     <title>Karan Prajapati | BSc IT Portfolio</title>
 
@@ -1389,11 +1392,294 @@
             }
         }
 
+
+        /* =====================================================
+           PREMIUM UI UPGRADES
+        ===================================================== */
+
+        #scrollProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--pink));
+            z-index: 9999;
+            box-shadow: 0 0 15px rgba(0,229,255,.45);
+        }
+
+        .theme-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.05);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: .3s;
+        }
+
+        .theme-btn:hover {
+            transform: rotate(20deg) scale(1.08);
+            border-color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width .3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .hero-badge {
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.035);
+            color: #cbd6e8;
+            font-size: 12px;
+        }
+
+        .hero-badge strong {
+            color: white;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: var(--primary);
+            filter: blur(70px);
+            opacity: .08;
+            right: -60px;
+            top: -60px;
+            pointer-events: none;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+
+        .project-link.secondary {
+            color: #d8e0ef;
+        }
+
+        .mini-label {
+            display: inline-block;
+            color: var(--primary);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+        }
+
+        .copy-btn {
+            margin-left: 8px;
+            border: 0;
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .copy-btn:hover {
+            color: var(--primary);
+        }
+
+        .back-top {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: rgba(5,8,22,.75);
+            backdrop-filter: blur(12px);
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px);
+            transition: .3s;
+            z-index: 90;
+        }
+
+        .back-top.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .github-profile-card {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .github-profile-card.show {
+            display: block;
+            animation: fadeUp .5s ease;
+        }
+
+        .github-profile-head {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .github-avatar {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+
+        .github-profile-head h4 {
+            font-family: "Space Grotesk";
+            font-size: 18px;
+        }
+
+        .github-profile-head span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .github-profile-stats {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 8px;
+        }
+
+        .github-profile-stats div {
+            padding: 12px;
+            border-radius: 12px;
+            background: rgba(255,255,255,.035);
+            text-align: center;
+        }
+
+        .github-profile-stats b {
+            display: block;
+            font-size: 18px;
+        }
+
+        .github-profile-stats span {
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Light theme */
+        body.light-theme {
+            --background: #f5f7fb;
+            --background-2: #eaf0f8;
+            --text: #101827;
+            --muted: #5d6b82;
+            --glass: rgba(255,255,255,.72);
+            --border: rgba(20,35,60,.12);
+            background: var(--background);
+            color: var(--text);
+        }
+
+        body.light-theme::before {
+            background-image:
+                linear-gradient(rgba(20,35,60,.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(20,35,60,.045) 1px, transparent 1px);
+        }
+
+        body.light-theme nav {
+            background: rgba(255,255,255,.75);
+        }
+
+        body.light-theme .btn {
+            color: var(--text);
+        }
+
+        body.light-theme .btn-primary {
+            color: #03101a;
+        }
+
+        body.light-theme .theme-btn,
+        body.light-theme .back-top {
+            color: var(--text);
+            background: rgba(255,255,255,.75);
+        }
+
+        body.light-theme footer strong {
+            color: var(--text);
+        }
+
+        @media(max-width:600px) {
+            .nav-actions {
+                gap: 6px;
+            }
+
+            .theme-btn {
+                width: 34px;
+                height: 34px;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .back-top {
+                right: 15px;
+                bottom: 15px;
+            }
+        }
+
     </style>
 </head>
 
 
 <body>
+    <div id="scrollProgress"></div>
 
     <!-- BACKGROUND EFFECTS -->
 
@@ -1444,11 +1730,15 @@
 
             </ul>
 
-            <button
-                class="menu-btn"
-                id="menuBtn">
-                ☰
-            </button>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">☀</button>
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                    aria-label="Open navigation menu">
+                    ☰
+                </button>
+            </div>
 
         </nav>
 
@@ -1843,13 +2133,10 @@
 
                         </div>
 
-                        <a
-                            href="#home"
-                            class="project-link">
-
-                            View Project →
-
-                        </a>
+                        <div class="project-actions">
+                            <a href="#home" class="project-link">View Project →</a>
+                            <a href="#contact" class="project-link secondary">Ask Me ↗</a>
+                        </div>
 
                     </div>
 
@@ -1881,13 +2168,9 @@
 
                         </div>
 
-                        <a
-                            href="#contact"
-                            class="project-link">
-
-                            Discuss Project →
-
-                        </a>
+                        <div class="project-actions">
+                            <a href="#contact" class="project-link">Discuss Project →</a>
+                        </div>
 
                     </div>
 
@@ -1919,13 +2202,9 @@
 
                         </div>
 
-                        <a
-                            href="#github"
-                            class="project-link">
-
-                            See GitHub →
-
-                        </a>
+                        <div class="project-actions">
+                            <a href="#github" class="project-link">See GitHub →</a>
+                        </div>
 
                     </div>
 
@@ -2008,6 +2287,21 @@
                         <div
                             class="github-result"
                             id="githubResult">
+                        </div>
+
+                        <div class="github-profile-card" id="githubProfileCard">
+                            <div class="github-profile-head">
+                                <img class="github-avatar" id="githubAvatar" alt="GitHub profile avatar">
+                                <div>
+                                    <h4 id="githubName">GitHub Profile</h4>
+                                    <span id="githubBio">Loading profile...</span>
+                                </div>
+                            </div>
+                            <div class="github-profile-stats">
+                                <div><b id="repoCount">0</b><span>Repositories</span></div>
+                                <div><b id="followerCount">0</b><span>Followers</span></div>
+                                <div><b id="followingCount">0</b><span>Following</span></div>
+                            </div>
                         </div>
 
                     </div>
@@ -2142,7 +2436,7 @@
                             <!-- CHANGE EMAIL HERE -->
         
                             <a
-                                href="https://karanprajapatibhavesh@gmail.com"
+                                href="mailto:karanprajapatibhavesh@gmail.com"
                                 
                                 class="btn btn-primary">
 
@@ -2244,7 +2538,7 @@
 
     </main>
 
-
+    <button class="back-top" id="backTop" aria-label="Back to top" title="Back to top">↑</button>
 
     <!-- =====================================================
          FOOTER
@@ -2258,7 +2552,7 @@
             Karan Prajapati
         </strong>
 
-        — Built with HTML, CSS & C PROGRAM.
+        — Built with HTML, CSS & JavaScript.
 
     </footer>
 
@@ -2459,58 +2753,51 @@
            GITHUB CONNECT
         ================================================== */
 
-        function connectGitHub() {
-
-            const input =
-                document.getElementById(
-                    "githubUsername"
-                );
-
-            const result =
-                document.getElementById(
-                    "githubResult"
-                );
-
-
-            const username =
-                input.value.trim();
-
+        async function connectGitHub() {
+            const input = document.getElementById("githubUsername");
+            const result = document.getElementById("githubResult");
+            const profileCard = document.getElementById("githubProfileCard");
+            const username = input.value.trim();
 
             if (!username) {
-
-                result.textContent =
-                    "Please enter your GitHub username.";
-
+                result.textContent = "Please enter your GitHub username.";
+                profileCard.classList.remove("show");
                 return;
-
             }
 
+            result.textContent = "Loading GitHub profile...";
 
-            const githubURL =
-                "https://github.com/" +
-                encodeURIComponent(username);
+            try {
+                const response = await fetch(
+                    "https://api.github.com/users/" + encodeURIComponent(username)
+                );
 
+                if (!response.ok) throw new Error("GitHub user not found");
 
-            result.innerHTML =
+                const data = await response.json();
 
-                "GitHub connected: " +
+                result.innerHTML =
+                    "GitHub connected: <a href='" +
+                    data.html_url +
+                    "' target='_blank' rel='noopener' style='color:#00e5ff'>" +
+                    "@" + data.login + " ↗</a>";
 
-                "<a href='" +
-                githubURL +
-                "' target='_blank' " +
-                "style='color:#00e5ff'>" +
+                document.getElementById("githubAvatar").src = data.avatar_url;
+                document.getElementById("githubName").textContent =
+                    data.name || data.login;
+                document.getElementById("githubBio").textContent =
+                    data.bio || "Developer on GitHub";
+                document.getElementById("repoCount").textContent = data.public_repos;
+                document.getElementById("followerCount").textContent = data.followers;
+                document.getElementById("followingCount").textContent = data.following;
 
-                "@" +
-                username +
-
-                " ↗</a>";
-
-
-            localStorage.setItem(
-                "githubUsername",
-                username
-            );
-
+                profileCard.classList.add("show");
+                localStorage.setItem("githubUsername", username);
+            } catch (error) {
+                result.textContent =
+                    "GitHub profile not found. Please check the username.";
+                profileCard.classList.remove("show");
+            }
         }
 
 
@@ -2616,6 +2903,70 @@
 
             }
         );
+
+
+        /* =================================================
+           PREMIUM INTERACTIONS
+        ================================================== */
+
+        const themeBtn = document.getElementById("themeBtn");
+        const savedTheme = localStorage.getItem("portfolioTheme");
+
+        if (savedTheme === "light") {
+            document.body.classList.add("light-theme");
+            themeBtn.textContent = "🌙";
+        }
+
+        themeBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-theme");
+            const isLight = document.body.classList.contains("light-theme");
+            localStorage.setItem("portfolioTheme", isLight ? "light" : "dark");
+            themeBtn.textContent = isLight ? "🌙" : "☀";
+        });
+
+        const scrollProgress = document.getElementById("scrollProgress");
+        const backTop = document.getElementById("backTop");
+        const sections = document.querySelectorAll("main section[id]");
+        const navAnchors = document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            scrollProgress.style.width =
+                (pageHeight > 0 ? (scrollTop / pageHeight) * 100 : 0) + "%";
+
+            backTop.classList.toggle("show", scrollTop > 500);
+
+            let current = "home";
+            sections.forEach(section => {
+                if (scrollTop >= section.offsetTop - 180) {
+                    current = section.id;
+                }
+            });
+
+            navAnchors.forEach(link => {
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === "#" + current
+                );
+            });
+        }, { passive: true });
+
+        backTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        function copyEmail() {
+            const email = "karanprajapatibhavesh@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const button = document.querySelector(".copy-btn") || event?.currentTarget;
+                if (button) {
+                    const oldText = button.textContent;
+                    button.textContent = "✓ Copied";
+                    setTimeout(() => button.textContent = oldText, 1500);
+                }
+            });
+        }
 
 
     </script>
